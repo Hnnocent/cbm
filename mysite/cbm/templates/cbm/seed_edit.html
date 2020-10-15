@@ -1,0 +1,29 @@
+﻿{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 上述meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet"  href="{% static 'cbm/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet"  href="{% static 'cbm/css/dashboard.css' %}" />
+    <title>编辑</title>
+</head>
+<body>
+    <form action="" method="post">
+       种子编号: <input type="text" name="seedno_add" value="{{pub_obj,seedno}}">
+       提供单位: <input type="text" name="support_add" value = "{{pub_obj.support}}">
+       物种: <input type="text" name="species_add" value ="{{pub_obj.species}}">
+       产地: <input type="text" name="origin_add" value ="{{pub_obj.origin}}">
+       its1: <input type="text" name="its1_add" value ="{{pub_obj.its1}}">
+       its2: <input type="text" name="its2_add" value ="{{pub_obj.its2}}">
+       PCR_RELF图谱: <input type="text" name="pcr_relf_add" value ="{{pub_obj.rcrrelf}}">
+       <span>{{error}}</span>
+    <button>提交</button>
+    </form>
+
+
+</body>
+</html>

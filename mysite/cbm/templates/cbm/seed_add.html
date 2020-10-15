@@ -1,0 +1,31 @@
+﻿{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 上述meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'cbm/css/register.css' %}" rel="stylesheet"/>
+    <title>添加</title>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+       种子编号: <input type="text" name="seedno_add">
+       提供单位: <input type="text" name="support_add">
+       物种: <input type="text" name="species_add">
+       产地: <input type="text" name="origin_add">
+       its1: <input type="text" name="its1_add">
+       its2: <input type="text" name="its2_add">
+       PCR_RELF图谱: <input type="text" name="pcr_relf_add">
+       <span>{{error}}</span>
+    <button>提交</button>
+    </form>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

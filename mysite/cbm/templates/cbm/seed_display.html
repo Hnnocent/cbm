@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>种子信息</title>
+      <title>home</title>
+    {% load staticfiles %}
+
+        <link rel="stylesheet"  href="{% static 'cbm/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet"  href="{% static 'cbm/css/dashboard.css' %}" />
+</head>
+
+<body>
+     {{all_seedinformation}}
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">川贝母信息溯源系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">帮助</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="/index/">个人信息<span class="sr-only">(current)</span></a></li>
+            <li><a href="/seed_display/">种子信息</a></li>
+            <li><a href="#">加工信息</a></li>
+            <li><a href="#">流通信息</a></li>
+            <li><a href="#">储存信息</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          
+
+          <h2 class="sub-header">种子信息</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+            <tr>
+                <th>种子编号</th>
+                <th >提供单位</th>
+                <th >物种</th>
+                <th >产地</th>
+                <th >ITS1</th>
+                <th >ITS2</th>
+                <th >PCR-RELf图谱</th>
+                <th >操作</th>
+            </tr>
+              </thead>
+              <tbody>
+            {% for i in all_seedinformation %}
+            <tr>
+                <td>{{i.seedno}}</td>
+                <td>{{i.support}}</td>
+                <td>{{i.species}}</td>
+                <td>{{i.origin}}</td>
+                <td>{{i.its1}}</td>
+                <td>{{i.its2}}</td>
+                <td>{{i.rcrrelf}}</td>
+                <td><a href="/seed_add/">新增</a></td>
+                <td>
+                    <a href="/seed_del/?pk = {{i.seedno}}">删除</a>
+                    <a href="/seed_edit/?pk = {{i.seedno}}">编辑</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'cbm/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'cbm/scripts/bootstrap.js' %}"></script>
+
+
+
+ 
+  
+
+<div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+      <div class="xl-chrome-ext-bar__logo"></div>
+
+      <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
+      <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+    </div></body>
+</html>
